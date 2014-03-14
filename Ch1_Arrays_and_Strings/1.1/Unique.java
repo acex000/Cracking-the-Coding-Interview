@@ -1,16 +1,16 @@
-import java.lang.String;
-
 
 public class Unique {
 	static boolean b;
 	public static void main(String[] args) {
-		String s = args[0];
-		
-		b=check(s);
-		if(b==true)
-			System.out.println("Unique");
-		else
-			System.out.println("Not Unique");
+		if(args.length==0)
+			System.out.println("no input");
+		else{
+			String s = args[0];
+			if(check(s))
+				System.out.println("Unique");
+			else
+				System.out.println("Not Unique");
+		}		
 	}
 
 	public static boolean check(String s){
