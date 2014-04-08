@@ -29,7 +29,8 @@ public class StringCompression{
 			}
 			else {
 				if(startChar){
-					startChar = false;	
+					startChar = false;	//at the beginning, temp is \0 and ,temp differs from char[0],
+										//but we donnot add count into string this time
 				}
 				else	{
 					newStr.append((char)('0'+count));
