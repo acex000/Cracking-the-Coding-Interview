@@ -3,7 +3,7 @@ import java.util.*;
 public class StringCompression{
 
 	public static void main(String[] args){
-		String str = "aabcccccaaa";
+		String str = "aabccccccccccccccaaa";
 		String cStr = compression(str);
 
 		if(cStr.length()>=str.length())
@@ -33,7 +33,7 @@ public class StringCompression{
 										//but we donnot add count into string this time
 				}
 				else	{
-					newStr.append((char)('0'+count));
+					newStr.append(String.valueOf(count));
 				}
 				newStr.append(chArr[i]);
 				temp = chArr[i];				
