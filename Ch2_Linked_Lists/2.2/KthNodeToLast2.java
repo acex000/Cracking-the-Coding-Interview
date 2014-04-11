@@ -2,7 +2,7 @@
 //used recursion
 public class KthNodeToLast2{
 	private static int kth=3;
-	private static int count=0;
+	private static int count=1;
 
 	public static void GetKthToLast(LinkedListNode llNode){
 		
@@ -26,7 +26,7 @@ public class KthNodeToLast2{
 			llNode.addToTail(i);
 		}
 		Runner = llNode;
-		while(Runner.next!=null){
+		while(Runner!=null){
 			System.out.print(Runner.data+",");
 			Runner = Runner.next;	
 		}
