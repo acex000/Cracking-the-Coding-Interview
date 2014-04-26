@@ -1,15 +1,15 @@
 public class ListSumRtoL{
-	public static int lengthDiff = 0;
-	public static int count = 0;
+	public static int lengthDiff = 0; //the length difference between the two list
+	public static int count = 0;	//a mirror variable used to comparing with lengthDiff
 	public static LinkedListNode newList = new LinkedListNode(0);
 	public static LinkedListNode longerList;
 	public static LinkedListNode shorterList;
-
+	//core function that do the summation work recursively
 	public static void sumList(LinkedListNode longerList, LinkedListNode shorterList){
 		int digitSum = 0;
 		int remainderNum = 0;
 		int filpNum = 0;
-		if(longerList.next==null&&shorterList.next==null){
+		if(longerList.next==null&&shorterList.next==null){		//recursion bottom condition
 			digitSum = longerList.data+shorterList.data+newList.data;
 			remainderNum = digitSum%10;
 			filpNum = digitSum/10;
@@ -38,7 +38,7 @@ public class ListSumRtoL{
 			}
 		}
 	}
-
+	//calculate the length difference between the two list and save into variable lengthDiff
 	public static void calculateDiff(LinkedListNode head1, LinkedListNode head2){
 		LinkedListNode ptr1=head1;
 		LinkedListNode ptr2=head2;
@@ -60,10 +60,10 @@ public class ListSumRtoL{
 				ptr2 = ptr2.next;
 		}
 		count = lengthDiff;
-		System.out.println(lengthDiff);
+		System.out.println("length difference:"+lengthDiff);
 
 	}
-
+	//check if there is any null list between these two lists
 	public static void checkIfNull(LinkedListNode head1, LinkedListNode head2){
 		if(head1==null&&head2!=null){
 			newList = head2;
