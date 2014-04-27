@@ -11,9 +11,13 @@ public class MyStack<T>{
 		++depth;
 	}
 
-	public void pop(){
-		head = head.next;
-		--depth;
+	public T pop(){
+		if(head!=null){
+			T item = head.data;
+			head = head.next;
+			--depth;
+		}
+		return null;
 	}
 
 	public T peek(){
