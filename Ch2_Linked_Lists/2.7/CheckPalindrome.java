@@ -4,18 +4,24 @@ public class CheckPalindrome{
 
 	public static void check(LinkedListNode<Integer> head){
 		LinkedListNode<Integer> slowPtr = head;
-		LinkedListNode<Integer> fastPtr = head.next;	//the first node is already the first step for slowptr, so fastptr should at the second node as its first pace
+		// LinkedListNode<Integer> fastPtr = head.next;	//original thought:the first node is already the first step for slowptr, so fastptr should at the second node as its first pace
+		LinkedListNode<Integer> fastPtr = head;	//new thought: set both of slow and fast to be head initially
 		LinkedListNode<Integer> ptr = head;
 		MyStack<LinkedListNode<Integer>> ms = new MyStack<LinkedListNode<Integer>>();
-		while(fastPtr.next!=null){
+		// while(fastPtr.next!=null){	//original thought: use this loop when fastPtr initial value is head.next.
+
+		// 	slowPtr = slowPtr.next;
+		// 	fastPtr = fastPtr.next;
+		// 	if(fastPtr.next!=null){
+		// 		fastPtr = fastPtr.next;
+		// 	}
+		// }
+		while(fastPtr.next!=null&&fastPtr.next.next!=null){	//new thought: changed the control logic in original though
 
 			slowPtr = slowPtr.next;
-			fastPtr = fastPtr.next;
-			if(fastPtr.next!=null){
-				fastPtr = fastPtr.next;
-			}
+			fastPtr = fastPtr.next.next;
 		}
-		
+
 		while(slowPtr.next!=null){
 			slowPtr = slowPtr.next;
 			ms.push(slowPtr);			
