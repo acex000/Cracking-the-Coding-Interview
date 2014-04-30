@@ -3,8 +3,7 @@ import java.util.*;
 public class SetOfStacks<T>{
 	
 	LinkedListNode<T> globalTop = null;
-	ArrayList<LinkedListNode<T>> subTopSet = new ArrayList<LinkedListNode<T>>();
-	ArrayList<LinkedListNode<T>> subBottomSet = new ArrayList<LinkedListNode<T>>();
+	ArrayList<LinkedListNode<T>> subTopSet = new ArrayList<LinkedListNode<T>>(); //use this to store pointer of top item of each sub stack
 	int currentStack = -1;
 	int stackSize = 5;
 	int globalDepth = 0;
@@ -15,7 +14,7 @@ public class SetOfStacks<T>{
 			globalTop = newItem;
 			
 			subTopSet.add(globalTop);
-			subBottomSet.add(globalTop);
+
 			++globalDepth;
 			++currentStack;
 		}
@@ -23,7 +22,7 @@ public class SetOfStacks<T>{
 			globalTop = globalTop.addToHead(object); 
 
 			subTopSet.add(globalTop);
-			subBottomSet.add(globalTop);
+			
 			++globalDepth;
 			++currentStack;
 		}
