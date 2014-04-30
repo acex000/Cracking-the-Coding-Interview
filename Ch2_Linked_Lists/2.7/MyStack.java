@@ -16,6 +16,7 @@ public class MyStack<T>{
 			T item = head.data;
 			head = head.next;
 			--depth;
+			return item;
 		}
 		return null;
 	}
