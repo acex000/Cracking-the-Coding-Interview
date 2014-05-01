@@ -26,8 +26,6 @@ public class Tower{
 	}
 
 	public void topDiskTo(Tower targetT){
-		// System.out.println("1;");
-		// System.out.print(diskPivot.peek());
 		int topDisk = diskPivot.pop();
 		targetT.add(topDisk);
 	}
