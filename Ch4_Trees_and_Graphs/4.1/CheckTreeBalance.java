@@ -3,34 +3,34 @@ import java.util.Random;
 public class CheckTreeBalance{
 
 
-	public static boolean isBalanced(TreeNode root){
+	public static boolean isBalanced(BinaryTreeNode root){
 		if(root==null)
 			return true;
-		if(!isBalanced(root.left)||!isBalanced(root.right)){
+		if(!isBalanced(root.leftChild)||!isBalanced(root.rightChild)){
 			return false;
 		}
-		else if(Math.abs(getHeight(root.left)-getHeight(root.right))>1){
+		else if(Math.abs(getHeight(root.leftChild)-getHeight(root.rightChild))>1){
 			return false;
 		}
 		return true;
 	}
 
-	public static int getHeight(TreeNode root){
+	public static int getHeight(BinaryTreeNode root){
 		int height=0;
 		if(root==null)
 			return height;
-		height = Math.max(getHeight(root.left), getHeight(root.right))+1;
+		height = Math.max(getHeight(root.leftChild), getHeight(root.rightChild))+1;
 		return height;
 	}
 
 	public static void main(String[] args){
-		int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-		TreeNode root = TreeNode.createMinimalBST(array);
+		Integer[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+		BinaryTreeNode<Integer> root = BinaryTreeNode.createMinimalBSTree(array);
 		System.out.println("Root? " + root.data);
 		System.out.println("Is balanced? " + isBalanced(root));
 		
 		// Could be balanced, actually, but it's very unlikely...
-		TreeNode unbalanced = new TreeNode(10);
+		BinaryTreeNode<Integer> unbalanced = new BinaryTreeNode<Integer>(10);
 		Random rdgenerator = new Random();
 		for (int i = 0; i < 10; i++) {
 			unbalanced.insertInOrder(rdgenerator.nextInt(100));
