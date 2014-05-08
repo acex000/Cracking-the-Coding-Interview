@@ -27,7 +27,7 @@ public class BinaryTreeNode<T extends Comparable<T>>{
 	}
 	
 	public void insertInOrder(T newData){
-		if(newData.compareTo(data)<0){	//after using interface Comparable<T>, we use x.comparaTo(y) method of this interface to do the comparation
+		if(newData.compareTo(data)<=0){	//after using interface Comparable<T>, we use x.comparaTo(y) method of this interface to do the comparation
 			if(this.leftChild==null){
 				this.setLeftChild(new BinaryTreeNode<T>(newData));
 			}
@@ -35,7 +35,7 @@ public class BinaryTreeNode<T extends Comparable<T>>{
 				this.leftChild.insertInOrder(newData);
 			}
 		}
-		else if(newData.compareTo(data)>=0){ //after using interface Comparable<T>, we use x.comparaTo(y) method of this interface to do the comparation
+		else if(newData.compareTo(data)>0){ //after using interface Comparable<T>, we use x.comparaTo(y) method of this interface to do the comparation
 			if(this.rightChild==null){
 				this.setRightChild(new BinaryTreeNode<T>(newData));
 			}
