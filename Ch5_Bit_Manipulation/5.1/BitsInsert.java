@@ -1,3 +1,5 @@
+//In this question, the portion we are requied to insert starts from start+1 bit to end+1 bit(both start+1 bit and end +1 bit are included)
+//I dont why the author give a rule like this...
 public class BitsInsert{
 
 	public static void insert(int a, int b, int start, int end){
